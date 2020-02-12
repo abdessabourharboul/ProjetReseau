@@ -7,12 +7,8 @@ import fr.angers.univ.info.m2.acdi.reseau.utils.Utils;
 
 public class ClePublique {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6531224431955554856L;
 	private BigInteger n;
-	private Integer e;
+	private BigInteger e;
 
 	public ClePublique() {
 		Random rand = new Random();
@@ -29,11 +25,14 @@ public class ClePublique {
 			e = new BigInteger(32, rand);
 		} while (e == m || !Utils.estImpair(e) && !e.gcd(m).equals(BigInteger.ONE));
 
-		System.out.println(p);
-		System.out.println(q);
-		System.out.println(m);
-		System.out.println(n);
-		System.out.println(e);
+		/*p = BigInteger.valueOf(53);
+		q = BigInteger.valueOf(97);
+		n = BigInteger.valueOf(5141);
+		m = BigInteger.valueOf(4992);
+		e = BigInteger.valueOf(7);*/
+
+		this.n = n;
+		this.e = e;
 
 	}
 
@@ -45,11 +44,11 @@ public class ClePublique {
 		this.n = n;
 	}
 
-	public Integer getE() {
+	public BigInteger getE() {
 		return e;
 	}
 
-	public void setE(Integer e) {
+	public void setE(BigInteger e) {
 		this.e = e;
 	}
 
