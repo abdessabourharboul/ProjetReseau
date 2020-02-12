@@ -12,6 +12,8 @@ public class Dechiffrement {
 	public Dechiffrement(ClePrivee clePrivee, ArrayList<BigInteger> Si) {
 		ArrayList<BigInteger> Sdechifre = new ArrayList<BigInteger>();
 		for (BigInteger s : Si) {
+			BigInteger ll = s.modPow(clePrivee.getU(), clePrivee.getN());
+			//System.out.println( " Dechif Lettre " + ll);
 			Sdechifre.add(s.modPow(clePrivee.getU(), clePrivee.getN()));
 		}
 		String chaineDechifree = "";
