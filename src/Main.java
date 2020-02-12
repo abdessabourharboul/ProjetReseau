@@ -50,7 +50,7 @@ public class Main {
 			System.out.print("Votre pseudo sur le réseau : ");
 			String name = scanner.nextLine();
 			
-			scanner.close();
+			//scanner.close();
 			
 			try {
 				Socket so = new Socket(ip, port);
@@ -83,7 +83,10 @@ public class Main {
 			Server.runServer(port);
 		}
 		
-		scanner.close();
+		//scanner.close();
+		
+		// Note : si on ferme ce stream, nous aurons une exception dans le thread
+		// du client pour l'envoi de Messages
 	}
 
 }
