@@ -1,41 +1,39 @@
 package fr.angers.univ.info.m2.acdi.reseau.client;
 
-import java.net.Socket;
+import fr.angers.univ.info.m2.acdi.reseau.models.ClePrivee;
+import fr.angers.univ.info.m2.acdi.reseau.models.ClePublique;
 
 public class Client {
-	private int id;
-	private String name;
-	Socket socket;
-	
-	public Client(int id, String name, Socket socket) {
-		this.id = id;
-		this.name = name;
-		this.socket = socket;
+	private ClePrivee m_clePrivee;
+	private ClePublique m_clePublique;
+	private ClePublique dist_client_pubKey;
+
+	public Client() {
+		this.m_clePublique = new ClePublique();
+		this.m_clePrivee = new ClePrivee(this.m_clePublique);
 	}
 
-	public int getId() {
-		return id;
+	public ClePrivee getM_clePrivee() {
+		return m_clePrivee;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setM_clePrivee(ClePrivee m_clePrivee) {
+		this.m_clePrivee = m_clePrivee;
 	}
 
-	public String getName() {
-		return name;
+	public ClePublique getM_clePublique() {
+		return m_clePublique;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setM_clePublique(ClePublique m_clePublique) {
+		this.m_clePublique = m_clePublique;
 	}
 
-	public Socket getSocket() {
-		return socket;
+	public ClePublique getDist_client_pubKey() {
+		return dist_client_pubKey;
 	}
 
-	public void setSocket(Socket socket) {
-		this.socket = socket;
-	}	
+	public void setDist_client_pubKey(ClePublique dist_client_pubKey) {
+		this.dist_client_pubKey = dist_client_pubKey;
+	}
 }
-
-

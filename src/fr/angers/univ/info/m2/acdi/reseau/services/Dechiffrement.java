@@ -13,7 +13,7 @@ public class Dechiffrement {
 		ArrayList<BigInteger> Sdechifre = new ArrayList<BigInteger>();
 		for (BigInteger s : Si) {
 			BigInteger ll = s.modPow(clePrivee.getU(), clePrivee.getN());
-			//System.out.println( " Dechif Lettre " + ll);
+			// System.out.println( " Dechif Lettre " + ll);
 			Sdechifre.add(s.modPow(clePrivee.getU(), clePrivee.getN()));
 		}
 		String chaineDechifree = "";

@@ -1,11 +1,17 @@
 package fr.angers.univ.info.m2.acdi.reseau.services;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
 import fr.angers.univ.info.m2.acdi.reseau.models.ClePublique;
 
-public class Chiffrement {
+public class Chiffrement implements Serializable {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -3103667553045584586L;
 
 	private ArrayList<BigInteger> Si;
 
