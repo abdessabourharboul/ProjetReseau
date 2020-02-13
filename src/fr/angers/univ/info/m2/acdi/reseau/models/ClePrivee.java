@@ -9,8 +9,7 @@ public class ClePrivee {
 
 	public ClePrivee(ClePublique clePublique) {
 		// Appliquer l'algorithme d'euclid
-		BigInteger m = (clePublique.getP().subtract(BigInteger.ONE)
-				.multiply((clePublique.getQ().subtract(BigInteger.ONE))));
+		BigInteger m = (clePublique.getP().subtract(BigInteger.ONE).multiply((clePublique.getQ().subtract(BigInteger.ONE))));
 		BigInteger r0 = clePublique.getE();
 		BigInteger r1 = m;
 		BigInteger u0 = BigInteger.ONE;
@@ -40,6 +39,8 @@ public class ClePrivee {
 		}
 		this.n = clePublique.getN();
 		this.u = u0;
+                
+                
 	}
 
 	public BigInteger getN() {

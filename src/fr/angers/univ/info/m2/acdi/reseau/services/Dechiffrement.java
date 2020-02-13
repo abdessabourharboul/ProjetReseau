@@ -13,7 +13,7 @@ public class Dechiffrement {
 		ArrayList<BigInteger> Sdechifre = new ArrayList<BigInteger>();
 		for (BigInteger s : Si) {
 			BigInteger ll = s.modPow(clePrivee.getU(), clePrivee.getN());
-			// System.out.println( " Dechif Lettre " + ll);
+			//System.out.println( " Dechif Lettre " + ll);
 			Sdechifre.add(s.modPow(clePrivee.getU(), clePrivee.getN()));
 		}
 		String chaineDechifree = "";
@@ -22,12 +22,13 @@ public class Dechiffrement {
 			chaineDechifree += (char) charactere;
 		}
 
-		System.out.println("Cle privee (N) : " + clePrivee.getN());
+                // déplacer ces messages car ils s'affichent à chaque fois que l'on fait cette construction
+		/*System.out.println("Cle privee (N) : " + clePrivee.getN());
 		System.out.println("Cle privee (U) : " + clePrivee.getU());
 		System.out.println("-------------");
-		System.out.println("Code Chifre " + Si);
-		System.out.println("Code déchifrée : " + Sdechifre);
-		System.out.println("Chaine dechifree " + chaineDechifree);
+		System.out.println("Code Chifre " + Si);*/
+		System.out.println("Code déchifrée (ASCII) : " + Sdechifre);
+		System.out.println("Chaine dechifree depuis code ASCII " + chaineDechifree);
 		this.setChaineDechifree(chaineDechifree);
 	}
 

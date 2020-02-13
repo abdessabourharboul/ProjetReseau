@@ -4,6 +4,6 @@ import java.math.BigInteger;
 
 public class Utils {
 	public static boolean estImpair(BigInteger val) {
-		return !val.mod(new BigInteger("2")).equals(BigInteger.ZERO);
+	    return !val.mod(new BigInteger("2")).equals(BigInteger.ZERO);
 	}
 }
